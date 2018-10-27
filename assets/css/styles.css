@@ -1,0 +1,492 @@
+@font-face {
+	font-family:"zwei";
+	src: url('../css/Zwiebelfisch.ttf')
+}
+
+
+
+html,body{
+	height:100%;
+	margin:0;
+}
+
+/*OPENING PAGE*/
+  #triangle-up {
+	width: 0;
+	height: 0;
+	border-left: 100vw solid transparent;
+	border-right: 0 solid transparent;
+	border-bottom: 100vh solid rgb(89, 17, 128);
+	transition: 2s ease-in-out;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	right: 0;
+  }
+  
+  #triangle-down {
+	width: 0;
+	height: 0;
+	border-left: 0 solid transparent;
+	border-right: 100vw solid transparent;
+	border-top: 100vh solid rgb(9, 62, 119);
+	transition: 2s ease-in-out;
+	float: left;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+  }
+  
+  #startButton {
+	position: fixed;
+	z-index: 2;
+	opacity: 1;
+	width: 11vh;
+	height: 11vh;
+	bottom:45%;
+	left: calc(50% - 5.5vh);
+	background-color: rgb(232, 234, 255);;
+	border: solid;
+	border-width:3px;
+	border-color:black;
+	border-radius: 50%;
+	font-family: 'zwei';
+	line-height:0;
+	color: black;
+	font-size: 48px;
+	cursor: pointer;
+	box-shadow: 0 0 13px 0 rgb(46, 1, 77);
+  }
+  
+  #startButton:focus {
+	outline: 0;
+  }
+  
+  #startButton:hover {
+	transform: scale(1.2);
+  }
+  
+  #startButton:active {
+	transform: scale(1.1);
+  }
+
+  .krassInefade {
+	transform: perspective(900px) translateZ(0px);
+	opacity: 1;
+	transition: 2s ease-out;
+  }
+  
+  #triangle-down.usenand {
+	border-left: 0 solid transparent;
+	border-right: 0 solid transparent;
+	border-top: 100vh solid  rgb(23, 0, 126);
+	transition: 2s ease-in-out;
+  }
+  
+  #triangle-up.usenand {
+	border-left: 0 solid transparent;
+	border-right: 0 solid transparent;
+	border-bottom: 100vh solid rgb(13, 1, 65);
+	transition: 2s ease-in-out;
+  }
+
+/*CONTENT OF THE PROFILE*/  
+#page {
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+	width: 100%;
+	min-height:100%;
+	background-image:url('../images/blue1.jpg');
+	background-size:100%;
+  }
+
+/*Profile Bar*/
+#introBox{
+	display:flex;
+	justify-content:space-around;
+	align-items:center;
+	width:100%;
+	padding-top:10px;
+}
+#idBox {
+	display:flex;
+	justify-content:space-around;
+	width:100%;
+	align-items:center;
+}
+
+.introLines {
+	font-size:48px;
+	font-family:"zwei";
+	color:rgb(232, 234, 255);
+	width:250px;
+	text-align:center;	
+}
+#name, #title {
+	display:none;
+	font-size:24px;
+	font-family:"zwei";
+	color:rgb(232, 234, 255);
+	width:400px;
+	text-align:center;	
+}
+
+#name {
+	padding-left:50px;
+}
+
+#title {
+	padding-right:50px;
+}
+
+
+#profileBox{
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction:column;
+	width:100%;
+	margin-bottom:40px;
+	border-color:black;
+	border-width:2px;
+	border-style:solid;
+	background-image:url('../images/purple2.jpg');
+	background-size:contain;
+	background-repeat:no-repeat;
+	background-size:100%;
+}
+
+#profilePic{
+	border-radius:50%;
+	border-color:rgb(51,51,51);
+	border-width:3px;
+	border-style:solid;
+	max-height:200px;
+	margin-top:20px;
+	box-shadow:
+	0 0 30px 5px rgb(250, 249, 167);  /* inner rgb(232, 234, 255); */
+}
+
+/*Buttons*/
+.buttonRow {
+	display:flex;
+	justify-content: center;
+	width: 100%;
+	margin:auto auto 0 auto;
+	padding:20px;
+}
+
+#bioButton, #galleryButton, #contactButton{
+	width:100px;
+	max-height:36px;
+	margin-left:10px;
+	margin-right:10px;
+	border-radius:20px;
+	box-shadow: 
+		inset 2px 2px 2px rgba(255, 255, 255, 0.4), 
+		inset -2px -2px 2px rgba(0, 0, 0, .4);
+	transition: all 0.3s ease-in-out;
+	font-family: "zwei";
+	font-weight:bold;
+	font-size: 20px;
+	background-color:rgb(240, 236, 42);
+	color:rgb(51, 51, 51)
+}
+
+#bioButton:hover{
+	box-shadow: 
+		inset 2px 2px 2px rgba(255, 255, 255, .4), 
+		inset -2px -2px 2px rgba(0, 0, 0, .4),
+		-20px 24px 24px 0px rgba(0,0,0,0.24), 0 34px 50px 0px rgba(0,0,0,0.19);
+	cursor:pointer;
+	transform: scale(1.1);
+}
+
+#galleryButton:hover {
+	box-shadow: 
+		inset 2px 2px 2px rgba(255, 255, 255, .4), 
+		inset -2px -2px 2px rgba(0, 0, 0, .4),
+		0px 24px 24px 0px rgba(0,0,0,0.24), 0 34px 50px 0px rgba(0,0,0,0.19);
+	cursor:pointer;
+	transform: scale(1.1);
+}
+
+#contactButton:hover {
+	box-shadow: 
+		inset 2px 2px 2px rgba(255, 255, 255, .4), 
+		inset -2px -2px 2px rgba(0, 0, 0, .4),
+		30px 24px 24px 0px rgba(0,0,0,0.24), 0 34px 50px 0px rgba(0,0,0,0.19);
+	cursor:pointer;
+	transform: scale(1.1);
+}
+
+/*Bio*/
+#bio{
+	display:none;
+	flex-direction:column;
+	align-items: center;
+	border-color:black;
+	border-width:2px;
+	border-style:solid;
+	width:70%;
+	max-width:800px;
+	margin-bottom:40px;
+	border-radius:10px;
+	background-color:rgb(232, 234, 255);
+	text-align:center;
+
+}
+
+#bioPic{
+	width:200px;
+	border-radius:50%;
+	margin-top:30px;
+	border-radius:50%;
+	border-color:rgb(51,51,51);
+	border-width:3px;
+	border-style:solid;
+	width:200px;
+	box-shadow:
+	0 0 10px 2px rgb(255, 255, 255),
+	0 0 30px 5px rgb(36, 33, 218);
+
+}
+
+.text{
+	margin:30px;
+	text-align:left;
+	font-family:Arial, Helvetica, sans-serif;
+}
+
+/*Gallery*/
+#gallery{
+	display:flex;
+	flex-direction:column;
+	margin-bottom:40px;
+	width:90%;
+	display:none;
+}
+
+.box{
+	width: 100%;
+	height:300px;
+	display:flex;
+	margin-top:20px;
+	align-items:center;
+}
+
+.content{
+	display:flex;
+	flex-direction:column;
+	width:100%;
+	height:300px;
+	background-color:rgb(232, 234, 255);
+	border-style:solid;
+	border-width:2px;
+	border-color:rgb(51,51,51);
+	border-radius:20px;
+	display:none;
+}
+
+.textBox{
+	padding:10px;
+	flex:1;
+}
+
+.iconRow{
+		display:flex;
+		justify-content: center;
+		width: 100%;
+		margin:auto auto 0 auto;
+		padding-bottom:20px;
+}
+
+.coverWrap{
+	display:flex;
+	flex-direction:column;
+}
+
+.coverLabel{
+	display:inline-block;
+	position:relative;
+	width:100%;
+	height:40px;
+	text-align:center;
+	margin-bottom:20px;
+	background-color:rgb(240, 236, 42);
+	color:rgb(51,51,51);
+	font-family:"zwei";
+	font-size:26px;
+	line-height:36px;
+	border-width:3px;
+	border-style:solid;
+	border-color:rgb(51,51,51);
+	border-radius:20px;
+}
+
+.cover{
+	transition: all 0.3s ease-in-out;
+	max-height:250px;
+	border-radius:15px;
+	border-width:3px;
+	border-style:solid;
+	border-color:rgb(51,51,51);
+
+}
+.cover:hover {
+	transform: scale(1.1);
+	box-shadow: 20px 24px 32px 0 rgba(0,0,0,0.24), 0 34px 100px 0 rgba(0,0,0,0.19);
+}
+
+
+.codeButtons, .pageButtons{
+	max-height:50px;
+	min-height:50px;
+	border-radius:12px;
+	border-style:solid;
+	border-width:3px;
+	border-color:rgb(51,51,51);
+	margin-left:30px;
+	margin-right:30px;
+}
+
+
+#project1Box, #project3Box{
+	justify-content:flex-end;
+}
+
+#project1Content, #project3Content {
+	margin-right:30px;
+}
+
+#project1Buttons{
+	display:none;
+}
+
+#project2Content {
+	margin-left:30px;
+}
+
+/*Contact*/
+#contact{
+	display:flex;
+	display:none;
+	margin-bottom:40px;
+	padding-bottom:20px;
+	border-color:black;
+	border-width:2px;
+	border-style:solid;
+	width:50%;
+	max-width:800px;
+	border-radius:10px;
+	background-color:rgb(232, 234, 255);;
+}
+
+/*Footer*/
+#footer{
+	width:100%;
+	height:40px;
+	margin:auto auto 0 auto;
+	border-color:black;
+	border-top-width: 3px;
+	border-style:solid;
+	text-align:center;
+	color:rgb(232, 234, 255);;
+	font-family:"zwei";
+	line-height:20px;
+	font-size:20px;
+	background-color: rgb(13, 1, 65);
+	padding-top:6px;
+}
+
+/*MEDIA QUERIRES*/
+@media screen and (max-width: 980px) {
+	.cover{
+		align-self:center;
+	}
+	.box, .content{
+		height:100%
+	}
+	#project1Box, #project3Box{
+		flex-direction:column-reverse;
+	}
+	#project2Box {
+		flex-direction:column;
+	}
+	#project1Content, #project2Content, #project3Content {
+		margin: 20px 0px 20px 0px;
+	}
+}
+@media screen and (max-width: 820px) {
+	#bioButton, #galleryButton, #contactButton {
+		font-size:16px;
+		width:80px;
+	}
+	#profilePic{
+		width:150px;
+	}
+	.introLines{
+		font-size:36px;
+	}
+	#name,#title{
+		font-size:16px;
+	}
+
+	#name{
+		padding-left:10px;
+	}
+	#title{
+		padding-right:10px;
+	}
+
+	#bio{
+		width:85%;
+	}
+	#bioPic{
+		float:none;
+	}
+}	
+
+
+
+@media screen and (max-width: 700px) {
+	#profilePic{
+		width:100px;
+	}
+	.introLines{
+		font-size:30px;
+	}
+	#name,#title{
+		font-size:12px;
+	}
+	#bioButton, #galleryButton, #contactButton {
+		font-size:12px;
+		width:70px;
+		height:24px;
+	}
+} 
+
+@media screen and (max-width: 550px) {
+	.introLines{
+		font-size:24px;
+	}
+	.buttonRow{
+		padding:10px;
+	}
+	#bioButton, #galleryButton, #contactButton {
+		margin:3px;
+	}
+}
+
+@media screen and (max-width: 400px) {
+	#profilePic{
+		width:75px;
+	}
+	#bioButton, #galleryButton, #contactButton {
+		font-size:12px;
+		width:50px;
+		margin:3px;
+	}
+}
