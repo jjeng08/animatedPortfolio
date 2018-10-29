@@ -33,7 +33,7 @@ $(document).ready(function () {
 
 	//GALLERY ANIMATIONS
 	$("#project1Cover").click(function () {
-		if ($(window).width() <820) {
+		if ($(window).width() <=960) {
 			$('#project1Content').slideToggle("slow");
 		}
 		else {
@@ -44,7 +44,7 @@ $(document).ready(function () {
 	});
 
 	$("#project2Cover").click(function () {
-		if ($(window).width() <820) {
+		if ($(window).width() <=960) {
 			$('#project2Content').slideToggle("slow");
 		}
 		else {
@@ -53,7 +53,7 @@ $(document).ready(function () {
 	});
 
 	$("#project3Cover").click(function () {
-		if ($(window).width() <820) {
+		if ($(window).width() <=960) {
 			$('#project3Content').slideToggle("slow");
 		}
 		else {
