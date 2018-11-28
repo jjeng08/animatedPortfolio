@@ -9,55 +9,43 @@ $(document).ready(function () {
 		}, 1);
 	});
 
-	//MAIN SECTION ANIMATIONS
-	$("#bioButton").click(function () {
-		$("#bio").slideToggle("slow");
+	function introHide() {
 		$('#introBox').slideUp();
 		$('#name').fadeIn();
 		$('#title').fadeIn();
+	}
+	//MAIN SECTION ANIMATIONS
+	$("#bioButton").click(function () {
+		$("#bio").slideDown("slow");
+		$("#gallery").slideUp("slow");
+		$("#contact").slideUp("slow");
+		introHide();
 	});
 
 	$("#galleryButton").click(function () {
-		$("#gallery").slideToggle("slow");
-		$('#introBox').slideUp();
-		$('#name').fadeIn();
-		$('#title').fadeIn();
+		$("#bio").slideUp("slow");
+		$("#gallery").slideDown("slow");
+		$("#contact").slideUp("slow");
+		introHide();
 	});
 
 	$("#contactButton").click(function () {
-		$("#contact").slideToggle("slow");
-		$('#introBox').slideUp();
-		$('#name').fadeIn();
-		$('#title').fadeIn();
+		$("#bio").slideUp("slow");
+		$("#gallery").slideUp("slow");
+		$("#contact").slideDown("slow");
+		introHide();
 	});
 
 	//GALLERY ANIMATIONS
 	$("#project1Cover").click(function () {
-		if ($(window).width() <=960) {
-			$('#project1Content').slideToggle("slow");
-		}
-		else {
-			$("#project1Content").animate({ width: 'toggle' }, 350);
-			$("#project1Buttons").slideToggle("slow");
-
-		}
+		$('#project1Content').slideToggle("slow");
 	});
 
 	$("#project2Cover").click(function () {
-		if ($(window).width() <=960) {
-			$('#project2Content').slideToggle("slow");
-		}
-		else {
-			$("#project2Content").animate({ width: 'toggle' }, 350);
-		}
+		$('#project2Content').slideToggle("slow");
 	});
 
 	$("#project3Cover").click(function () {
-		if ($(window).width() <=960) {
-			$('#project3Content').slideToggle("slow");
-		}
-		else {
-			$("#project3Content").animate({ width: 'toggle' }, 350);
-		}
+		$('#project3Content').slideToggle("slow");
 	});
 });
