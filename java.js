@@ -48,4 +48,16 @@ $(document).ready(function () {
 	$("#project3Cover").click(function () {
 		$('#project3Content').slideToggle("slow");
 	});
+
+	$("#project4Cover").click(function () {
+		$('#project4Content').slideToggle("slow");
+	});
+
+	$("#project5Cover").click(function () {
+		$('#project5Content').slideToggle("slow");
+	});
+
+	$("#project6Cover").click(function () {
+		$('#project6Content').slideToggle("slow");
+	});
 });
